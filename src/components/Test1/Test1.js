@@ -14,6 +14,8 @@ const Test1 = () => {
     const [a3, SetA3 ] = useState('');
     const [a4, SetA4 ] = useState(''); 
 
+    const [rightCount, AddRightAnswer ] = useState(0);
+      
     return (
         <div className = "Test1">
             <div className = {mainScreen}>
@@ -22,9 +24,10 @@ const Test1 = () => {
                     <span>
                         <input 
                             type = "checkbox"
-                            name = "Test1_Main_Ans0_ch0"
-                                                        
-                            onChange = {()=> a0 === ''?SetA0('1'):SetA0('')}/>
+                            name = "Test1_Main_Ans0_ch0"                
+                            checked = { a0 !==''}                                        
+                            onChange = {()=> a0 === ''?SetA0('1'):SetA0('')}
+                            />
                         <label 
                             htmlFor = "Test1_Main_Ans0_ch0"
                             className = "Test1_Main_Ans_lab">{Test1_arr[curQuest][1][0]}</label>
@@ -33,6 +36,7 @@ const Test1 = () => {
                         <input 
                             type = "checkbox"
                             name = "Test1_Main_Ans0_ch1"
+                            checked = { a1 !==''} 
                             onChange = {()=> a1 === ''?SetA1('2'):SetA1('')}/>
                         <label 
                             htmlFor = "Test1_Main_Ans0_ch1"
@@ -42,6 +46,7 @@ const Test1 = () => {
                         <input 
                             type = "checkbox"
                             name = "Test1_Main_Ans0_ch2"
+                            checked = { a2 !==''} 
                             onChange = {()=> a2 === ''?SetA2('3'):SetA2('')}/>
                         <label 
                             htmlFor = "Test1_Main_Ans0_ch2"
@@ -51,6 +56,7 @@ const Test1 = () => {
                         <input 
                             type = "checkbox"
                             name = "Test1_Main_Ans0_ch3"
+                            checked = { a3 !==''} 
                             onChange = {()=> a3 === ''?SetA3('4'):SetA3('')}/>
                         <label 
                             htmlFor = "Test1_Main_Ans0_ch3"
@@ -60,6 +66,7 @@ const Test1 = () => {
                         <input 
                             type = "checkbox"
                             name = "Test1_Main_Ans0_ch4"
+                            checked = { a4 !==''} 
                             onChange = {()=> a4 === ''?SetA4('5'):SetA4('')}/>
                         <label 
                             htmlFor = "Test1_Main_Ans0_ch4"
@@ -80,13 +87,18 @@ const Test1 = () => {
                                     SetMainScreen("Test1_none");
                                     SetRezScreen("");
                                 }
+                                if ( a0+''+a1+''+a2+''+a3+''+a4 === Test1_arr[curQuest][2] ) {
+                                    AddRightAnswer( rightCount+1 );
+                                }
                             }}>
                     </div>
-                    {a0+''+a1+''+a2+''+a3+''+a4}
+                    {}
                 </div>
             </div>
             <div className = {rezScreen}>
-                Rez
+                <p className = "Test1_Res_Text">
+                    {"Вы набралі "+rightCount+" з 20 балаў ("+Math.floor(rightCount/20*100)+"%)"}
+                </p>
             </div>
         </div>
     )

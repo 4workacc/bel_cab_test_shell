@@ -224,9 +224,10 @@ Test1_arr[19] = [
         "зазірнеш",
         "домік",
         "крочым",
-        "пацягнула"    
+        "пацягнула",
+        ""    
     ],
     "4"   
 ];
 
-export default Test1_arr;
+export default Test1_arr.sort(() => Math.random() - 0.5);
