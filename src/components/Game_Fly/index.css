@@ -1,0 +1,36 @@
+.Game_Fly {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    margin-left: -500px;
+    margin-top: -350px;
+    left: 50%;
+    top: 50%;
+}
+.GF_fon {
+    width: 100px;
+    height: 65px;
+    border-radius: 10px;    
+}
+.GF_Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   
+    width: 1000px;
+    height: 700px;
+}
+.GF_Menu_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.GF_fon:hover {
+    box-shadow: 0 0 2px 5px lightblue;
+    transform: scale(2);
+}
+.GF_Game {
+    background: no-repeat center top fixed;
+    width: 1000px;
+    height: 700px;
+    background-size: 100%;
+}

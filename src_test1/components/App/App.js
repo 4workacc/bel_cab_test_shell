@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import Game_Fly from "../Game_Fly/index";
+import Test1 from '../Test1/Test1';
 
 const App = () => {
   return (
     <div className = 'App'>
-      <Game_Fly />
+        <Test1 />
     </div>
   )
 }
